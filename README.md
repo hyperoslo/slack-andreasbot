@@ -2,7 +2,7 @@
 
 A bot that is always typing. Just like the non-bot Andreas.
 
-![Andreas is typing...](http://i.imgur.com/U1SH06d.gif])
+-> ![Andreas is typing...](http://i.imgur.com/U1SH06d.gif]) <-
 
 ## Usage
 
