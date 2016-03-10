@@ -3,7 +3,7 @@
 A bot that is always typing. Just like the non-bot Andreas.
 
 <p align="center">
-  ![Andreas is typing...](http://i.imgur.com/U1SH06d.gif])
+  <img src="http://i.imgur.com/U1SH06d.gif">
 </p>
 
 ## Usage
