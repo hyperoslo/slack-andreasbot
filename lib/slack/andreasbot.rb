@@ -14,27 +14,43 @@ module Slack
 
       client.on :hello do |data|
         puts 'Connected!'
+
+        joined_channels.each do |channel|
+          start_timer_for(channel)
+        end
       end
 
       client.on :channel_joined do |data|
-        @timers[data.channel.id] = EventMachine::PeriodicTimer.new(5) do
-          puts "Typing in ##{data.channel.name} (#{data.channel.id})..."
-          client.typing channel: data.channel.id
-        end
+        start_timer_for(data.channel)
       end
 
       client.on :channel_left do |data|
-        timer = @timers[data.channel]
-
-        if timer
-          timer.cancel
-          puts "Left and stopped typing in #{data.channel}."
-        else
-          puts "Left #{data.channel}."
-        end
+        stop_timer_for(data.channel)
       end
 
       client.start!
+    end
+
+    def joined_channels
+      client.channels.values.select { |channel| channel['is_member'] }
+    end
+
+    def start_timer_for(channel)
+      @timers[channel.id] = EventMachine::PeriodicTimer.new(5) do
+        puts "Typing in ##{channel.name} (#{channel.id})..."
+        client.typing channel: channel.id
+      end
+    end
+
+    def stop_timer_for(channel)
+      timer = @timers[channel]
+
+      if timer
+        timer.cancel
+        puts "Left and stopped typing in #{channel}."
+      else
+        puts "Left #{channel}."
+      end
     end
 
     def client
