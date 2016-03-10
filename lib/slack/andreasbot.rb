@@ -13,13 +13,20 @@ module Slack
 
       client.on :channel_joined do |data|
         @timers[data.channel.id] = EventMachine::PeriodicTimer.new(5) do
+          puts "Typing in #{data.channel.name} (#{data.channel.id})..."
           client.typing channel: data.channel.id
         end
       end
 
       client.on :channel_left do |data|
         timer = @timers[data.channel]
-        timer.cancel if timer
+
+        if timer
+          timer.cancel
+          puts "Left and stopped typing in #{data.channel}."
+        else
+          puts "Left #{data.channel}."
+        end
       end
 
       client.start!
