@@ -9,11 +9,16 @@ module Slack
     end
 
     def initialize
+      $stdout.sync = true
       @timers = {}
+
+      client.on :hello do |data|
+        puts 'Connected!'
+      end
 
       client.on :channel_joined do |data|
         @timers[data.channel.id] = EventMachine::PeriodicTimer.new(5) do
-          puts "Typing in #{data.channel.name} (#{data.channel.id})..."
+          puts "Typing in ##{data.channel.name} (#{data.channel.id})..."
           client.typing channel: data.channel.id
         end
       end
