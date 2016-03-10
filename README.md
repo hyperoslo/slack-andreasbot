@@ -1,12 +1,12 @@
 # Andreasbot for Slack
 
+A bot that is always typing. Just like the non-bot Andreas.
+
 ![Andreas is typing...](http://i.imgur.com/U1SH06d.gif])
 
 ## Usage
 
-A bot that is always typing. Just like the non-bot Andreas.
-
-`$ andreasbot`
+Just run `$ andreasbot`.
 
 Andreasbot requires `ANDREASBOT_API_TOKEN` to be set in your environment
 variables. [Create a bot](https://my.slack.com/services/new/bot) on your
