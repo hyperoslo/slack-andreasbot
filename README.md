@@ -1,7 +1,3 @@
-# Andreasbot for Slack
-
-A bot that is always typing. Just like the non-bot Andreas.
-
 <p align="center">
   <img src="http://i.imgur.com/uu6z4h7.jpg">
 </p>
