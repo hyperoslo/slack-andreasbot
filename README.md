@@ -4,6 +4,8 @@
 
 ## Usage
 
+A bot that is always typing. Just like the non-bot Andreas.
+
 `$ andreasbot`
 
 Andreasbot requires `ANDREASBOT_API_TOKEN` to be set in your environment
