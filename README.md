@@ -20,13 +20,11 @@ release a new version, update the version number in `version.rb`, and then run
 `bundle exec rake release`, which will create a git tag for the version, push git
 commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
-## I love you
+## Hyper loves you
 
-Johannes Gorset made this. You should [tweet me](http://twitter.com/jgorset) if you
-can't get it to work. In fact, you should tweet me anyway.
-
-## I love Hyper
-
-I work at [Hyper](https://github.com/hyperoslo) with a bunch of awesome folks
-who are every bit as passionate about building things as I am. If you're using
+[Hyper] made this. We're a bunch of awesome folks who are very passionate about
+building things. You should [tweet us](http://twitter.com/hyperoslo) if you
+can't get it to work. In fact, you should tweet us anyway. If you're using
 Andreasbot, we probably want to hire you.
+
+[Hyper]: https://github.com/hyperoslo
